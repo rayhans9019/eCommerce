@@ -9,6 +9,8 @@
         include(TEMPLATE_FRONT. DS . "side_nav.php");
 
         $query=query("SELECT * FROM products WHERE product_id='".escape_string($_GET['id'])."'");
+
+        // check before deleting/reading
         confirm ($query);
 
         while ($row = fetch_array($query)) :
