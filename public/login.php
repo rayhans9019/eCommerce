@@ -14,7 +14,7 @@ include(TEMPLATE_FRONT.DS."header.php");
                 <?php 
                     login_user(); 
                 ?>
-                <div class="form-group"><label for="">
+                <div class="form-group"><label form="">
                     username<input type="text" name="username" class="form-control"></label>
                 </div>
                  <div class="form-group"><label for="password">
