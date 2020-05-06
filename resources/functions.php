@@ -2,6 +2,24 @@
 
 //Helper functions...
 
+function set_message($msg){
+	if(!empty($msg)){
+		$_SESSION['message'] = $msg;
+	}
+	else{
+		$msg="Empty Message!";
+	}
+}
+
+function display_message(){
+	if(isset($_SESSION['message'])){
+		echo $_SESSION['message'];
+		unset($_SESSION['message']);
+	}
+}
+
+
+
 function redirect($location){
 	header("Location: $location");
 }
@@ -123,9 +141,12 @@ function login_user(){
 		confirm($query);
 
 		if(mysqli_num_rows($query)==0){
+
+			set_message("Wrong User Name or Password!");
 			redirect("login.php");
 		}
 		else{
+			set_message("Welcome {$username}");
 			redirect("admin");
 		}
 	}
