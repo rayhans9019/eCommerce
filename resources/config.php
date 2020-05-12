@@ -2,6 +2,7 @@
 //We will be using config.php to include everything
 ob_start();
 session_start();
+session_destroy();
 defined("DS") ? null : define("DS", DIRECTORY_SEPARATOR);
 //Finding Template Path...
 defined("TEMPLATE_FRONT") ? null : define("TEMPLATE_FRONT", __DIR__ .DS."templates/front");

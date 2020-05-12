@@ -1,17 +1,10 @@
-
 <!-- Configuration-->
+<?php 
+    require_once("../resources/config.php"); 
+    include(TEMPLATE_FRONT .  "/header.php"); // Header
+    include(TEMPLATE_FRONT .  "/top_nav.php"); // Navigation
 
-<?php require_once("../resources/config.php"); ?>
-
-
-<!-- Header-->
-<?php include(TEMPLATE_FRONT .  "/header.php");?>
-
-
-     <!--Navigation -->
-
-<?php include(TEMPLATE_FRONT .  "/top_nav.php");?>
-
+?>
          <!-- Contact Section -->
 
         <div class="container">

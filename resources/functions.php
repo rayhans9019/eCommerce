@@ -62,7 +62,7 @@ function get_product(){
                                 </h4>
 
                                 <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                                <a class="btn btn-primary" target="_blank" href="item.php?id={$row['product_id']}">Buy Now</a>
+                                <a class="btn btn-primary" target="_blank" href="cart.php?id={$row['product_id']}">Add to Cart</a>
                             </div>
 
                         </div>
