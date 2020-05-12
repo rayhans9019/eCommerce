@@ -131,7 +131,7 @@ DELIMETER;
 	}
 }
 
-
+// Login Part Begins
 function login_user(){
 	if(isset($_POST['submit'])){
 		$username= escape_string($_POST['username']);
@@ -150,11 +150,31 @@ function login_user(){
 			redirect("admin");
 		}
 	}
-}
-
+} // Login Part Ends
+//Contact Part Begins here
 function send_message(){
 	if(isset($_POST['submit'])){
-		echo "This works!";
+
+		$to           = "someone_not@gmail.com";
+		$from_name    = $_POST['name'];
+		$email        = $_POST['email'];
+		$subject	  =$_POST['subject'];
+		$message      =$_POST['message'];
+
+		$headers="From: {$from_name} {$email}";
+
+		//$result = ini_set($to,$headers);  
+		$result=mail($to, $subject, $message, $headers);
+
+		if(!$result){
+			set_message("Message Not Sent!");
+			redirect("contact.php");
+		} else {
+			set_message("Message Sent!");
+			redirect("contact.php");
+		}
+
+
 	}
 }
 //***********************************BACK END FUNCTIONS*******************************************//
